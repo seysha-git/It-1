@@ -2,265 +2,209 @@ html, body{
     height: 100%;
     width: 100%;
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
+
 body{
-    font-family: sans-serif;
-    background: url("Background-image.jpg");
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+    background: url("background2.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh; 
     background-attachment: fixed;
+  
 }
 
-.front{
+.frontpage{
     display: grid;
-    border-bottom: 2px solid black;
-    width: 100%;
-    height: 100vh;
-
+    grid-gap: 5px;
 }
-nav{
-    position: fixed;
-    width: 100%;
-    height: 8%;
-    background-color: whitesmoke;
+.nav-bar{
+    display: grid;
+    grid-gap: 5px;
+
+    height: 50px;
+
+    background-color: lightsteelblue;
     opacity: 0.8;
-    z-index: 1;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.logo,
+.search-container{
+    position: absolute;
+
+}
+.logo{
+    font-size: 40px;
+    margin-top: -3px;
+    margin-left: 10px;
+}
+.search-container{
+    margin-top: 12px;
+    margin-left: 400px;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+.nav-links{
+    display: grid;
+    justify-content: end;
+    align-content: center;
+}
 .nav-links ul{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px;
+
+    list-style: none;
+   
+
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+}
+.front-text{
+    text-align: center;
+    margin-top: 70px;
+}
+.front-text h1{
+    margin-top: -20px;
     font-weight: bolder;
     position: relative;
-    left: 50px;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, 150px);
-    justify-content: flex-end;
-    align-content: center;
-    list-style: none;
-}
-.nav-links a{
-    float: left;
-    text-decoration: none;
-    color: black;
-    transition: all .2s ease-in-out;
-}
-
-.nav-links ul a:hover {
-    font-size: 1.2em;
-    transform: translateX(0.1px);
-    transform: translateY(0.1x);
-
-    border-bottom: black 2px solid;
-}
-
-
-
-.logo{
-    position: absolute;
+    animation-name: header;
+    animation-duration: 3s;
     font-size: 40px;
-    margin-left: 5px;
-    margin-top: 4px;
 }
-
-picture{
-    position: relative;
-    top: -500px;
-    left: 800px;
-}
-
-#img{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 500px;
-    width: 500px;
-
-}
-
-
-header{ 
-    margin-top: 120px;
-    margin-left: 150px;
-    display: grid;
-    grid-gap: 100px;
-
+@keyframes header{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
     
 }
 
-header h2{
-    font-size: 40px;
-}
-header h1{
-    font-size: 50px;
-}
-header p{
-    line-height: 30px;
+.front-text p{
+    position: relative;
+    font-weight: bolder;
+    line-height: 25px;
     font-size: 18px;
-    max-width: 500px;
-}
+    animation-name: pgraph;
+    animation-duration: 4s;
+    max-width: 600px;
+    margin-left: 465px;
+    margin-top: 68px;
 
-
-
-.button{
-    position: relative;
-    margin-left: 100px;
-    padding-left: 10px;
-    width: 120px;
-    height: 50px;
-    background-color: skyblue;
-    border-radius: 50px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
     
+}
+@keyframes pgraph{
+    0%{left: 1200px}
+    100%{left: 0px;}
     
 }
 
-.button p {
+.courses{
     position: relative;
-    top: 12px;
-    left: 12px;
-    font-size: 15px;
-    font-weight: 1000;
-}
-.button a{
-    text-decoration: none;
-    color: black;
-}
-.media-icons{
-    position: relative;
-    width: 1000px;
+    margin-top: 30px;
     display: grid;
-    grid-gap: 24px;
-    grid-template-columns: repeat(5, 50px);
-}
-.apage{
-    height: 100vh;
-    display: grid;
-    grid-gap: 50px;
-    justify-content: center;
-    border-bottom: 2px black solid;
+    grid-gap: 70px;
 
-}
-.page-num{
-    font-size: 40px;
-    position: relative;
-    top: 50px;
-    left: 950px;
-
-
-}
-
-.about{
-    position: relative;
-    top: 10px;
-    left: 300px;
-    width: 590px;
-}
-.about h1{
-    text-align: center;
-    border-bottom: 2px solid black;
-    width: 60px;
-}
-.about p{
-    line-height: 40px;
-}
-#figure{
-    position: relative;
-    top: -575px;
-    left: -400px;
-    height: 470px;
-    width: 500px;
-    background-color: skyblue;
-    border: 2px solid black;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-}
-content{
-    display: grid;
-    grid-gap: 40px;
-
-    position: relative;
-    top: -35px;
-    left: 300px;
-    height: 180px;
-    width: 500px;
-    border: 2px solid black;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    
-    
-}
-.info-row1{
-    display: grid;
-    grid-template-columns: repeat(2, 200px);
-    
-}
-
-.info-row2{
-    display: grid;
-    grid-template-columns: repeat(2, 200px); 
-}
-
-
-
-.info-box ul{
-    list-style: none;
-    position: relative;
-    left: 0px;
-    top: -2px;
-}
-.info-box ul li{
-    padding: 10px;
-    text-decoration: none;
-}
-
-.bpage{
-    height: 115vh;
-    border-bottom: solid black 2px;
-
-    display: grid;
-    grid-gap: 1px;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(1, 350px);
     justify-content: center;
 }
 
-header3 h1{ 
-    margin-top: 50px;
-    text-align: center;
+.course1,
+.course2,
+.course3
+{
+    position: relative;
+    border: 5px solid black;
+    display:grid;
+    grid-template-rows: repeat(100px, 2);
+    grid-template-columns: 100%;
+    border-top-left-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+.course1{
+    animation-name: c1;
+    animation-duration: 3s;
+    transition: 0.2s ease-in-out;
+}
+.course2{
+    animation-name: c1;
+    animation-duration: 5s;
+    transition: 0.2s ease-in-out;
+}
+.course3{
+    animation-name: c1;
+    animation-duration: 7s;
+    transition: 0.2s ease-in-out;
 }
 
-.services{
-    display: grid;
-    grid-gap: 50px;
-
-    grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(2, 280px );
+.courses .course1:hover{
+    transform: translateX(10px);
+    transform: translateY(-40px);
+}
+.courses .course2:hover{
+    transform: translateX(10px);
+    transform: translateY(-40px);
+}
+.courses .course3:hover{
+    transform: translateX(10px);
+    transform: translateY(-40px);
+}
+@keyframes c1{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+    
+}
+@keyframes c2{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+    
+}
+@keyframes c3{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+    
+}
+.img,
+.text{
+    border: 5px solid black;
 }
 
-.service{
-    border: 2px solid black;
-    padding-top: 60px;
-    padding-left: 20px;
-    border-radius: 5px;
-    background-color: lightskyblue;
-    font-size: 0.8em;
-    transition: all .35s ease-Out;
-    bottom: 0;
 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+img{
+    position: absolute;
+    width: 232px;
+    height: 160px;
 }
-.service p{
-    font-size: 15px;
-    text-align: none;
+.text h1{
+    position: absolute;
+    margin-left: 5px;
+
+}
+.text p{
+    position: absolute;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-top: 60px;
+    width: 220px;
+
 }
 
-.service:hover{
-    background-color: lightblue;
+
+
+.img{
+    border-top-left-radius: 20px;
 }
-.cpage{
-    height: 100vh;
-    border-bottom: 2px solid black;
+.course-top{
+    border-bottom: none;
 }
+
 
